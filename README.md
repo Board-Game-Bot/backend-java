@@ -1,10 +1,11 @@
-# BotCorner-简单AI博弈小站
+# Board Game Bot Backend
 
-> 前后端全栈项目
->
-> Author: SokuRitszZ (Andrew Leung) （个人全栈）
+> 此代码仓库已停止维护，目前正在使用其他技术栈重构，并将在不久之后上线到 organization 的仓库上。
 
+## 介绍
 
-## 这里是 BotCorner 的后端部分，前端部分详见我的仓库 BotCorner-Frontend。
+这是 Board Game Bot App 的后端代码仓库，此项目旨在为 App 的**主要业务：C端后台服务**。
 
-## 请忽略 \*-acapp 的文件夹。
+## 技术栈
+
+<img src="https://skillicons.dev/icons?i=spring,mysql" width="25%">

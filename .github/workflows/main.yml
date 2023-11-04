@@ -1,0 +1,29 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure SSH
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
+      - name: Run maven script
+        uses: guillonapa/action-maven-cli/jdk8@master
+        with:
+          lifecycle: 'clean package test'
+
+      - name: Upload files via SCP
+        run: |
+          scp -o StrictHostKeyChecking=no -P ${{ secrets.SERVER_PORT }} \
+          -r ./backend/target/backend-0.0.1-SNAPSHOT.jar ./matching-system/target/matching-system-0.0.1-SNAPSHOT.jar ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:~/bgb-old/

@@ -29,4 +29,4 @@ jobs:
         lifecycle: 'clean package test'
 
     - name: Check Files
-      run: 'cd backend && ls -a && cd ../matching-system && ls -a'
+      run: 'ls -a ./backend/target && echo ">>>>><<<<<" && ls -a ./matching-system/target'

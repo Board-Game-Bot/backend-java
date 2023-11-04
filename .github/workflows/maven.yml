@@ -29,4 +29,4 @@ jobs:
         lifecycle: 'clean package test'
 
     - name: Check Files
-      run: 'ls -a'
+      run: 'cd backend && ls -a && cd ../matching-system && ls -a'
